@@ -50,7 +50,7 @@
         .hero-section-main {
         background-image: url(picures/FV背景.png);
         background-repeat: no-repeat;
-        background-size:cover;
+
         }
             .right-hero-iimg{
     border-radius: 50%;
@@ -107,6 +107,7 @@
     background-repeat: no-repeat;
     width: 100%;
     display: flex;
+    background-size: 100% 100% !important;
     justify-content: center;
     align-items: anchor-center;
     background-size:cover;
@@ -507,6 +508,8 @@ color: #C8A86B;
     flex-direction: column;
     justify-content: center;
     align-items: anchor-center;
+    backdrop-filter: blur(40px);
+    box-shadow: 0px 0px 79px 0px #FFFFFF;
     }
     span.gosai-structure-text::before {
     position: absolute;
@@ -1607,7 +1610,7 @@ color: #C8A86B;
 }
 
 .last-img-text-container {
-    padding: 66px 20px 51px;
+    padding: 66px 20px 95px;
 }
 .grid-main-container{
     padding: 43px 0px 93px;
@@ -1630,6 +1633,9 @@ color: #C8A86B;
     left: 50%;
     transform: translate(-50%, 0%);
 }
+.faq-section {
+    padding: 0;
+}
 
 .grid-card-bottom {
     max-width: unset;
@@ -1647,6 +1653,7 @@ color: #C8A86B;
 .single-product-img img {
     width: 80%;
     margin-top: 60px;
+    height: 350px;
 }
 .os-main-content p{
     max-width: 350px;
@@ -1682,6 +1689,7 @@ color: #C8A86B;
     padding: 30px;
     border-radius: 0 !important;
     z-index: 11111;
+    height: 550px;
 }
 .final-bottom-main-new-custom {
     padding: 100px 0 0;
@@ -2002,7 +2010,7 @@ span.gosai-structure-text::before {
     font-size: 30px;
 }
 .main-os-calm-section{
-    height: 750px !important;
+    height: 180vw !important;
     margin-top: -100px !important;
     z-index: 111111;
     position: relative;
@@ -2025,7 +2033,7 @@ span.gosai-structure-text::before {
     font-size: 20px !important;
 }
 .bottom-image-text-content h1{
-    padding-left: 20px;
+    padding-left: 50px;
 }
 .faq-container {
     margin-top: 22px !important;
@@ -2038,7 +2046,9 @@ span.gosai-structure-text::before {
     column-gap: 0;
     row-gap: 36px;
 }
-
+.bottom-image-text-main {
+    height: 550px !important;
+}
 
 
 
