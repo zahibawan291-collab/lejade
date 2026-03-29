@@ -1654,6 +1654,7 @@ color: #C8A86B;
     width: 80%;
     margin-top: 60px;
     height: 350px;
+    object-fit: contain;
 }
 .os-main-content p{
     max-width: 350px;
