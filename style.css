@@ -50,7 +50,7 @@
         .hero-section-main {
         background-image: url(picures/FV背景.png);
         background-repeat: no-repeat;
-
+      
         }
             .right-hero-iimg{
     border-radius: 50%;
@@ -113,6 +113,7 @@
     background-size:cover;
     position: relative;
     height: 700px;
+    z-index: 11111;
     overflow: hidden;
 }
    .vertical-headings{

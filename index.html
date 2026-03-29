@@ -25,9 +25,9 @@
     </div>
 
     <!-- ================header====================== -->
-
+     <div class="ripple-effect">
     <!-- ================hero section====================== -->
-    <section class="hero-section-main"> 
+    <section class="hero-section-main "> 
    <img src="picures/8 86.png" alt="" class="left-hero-iimg">
    <img src="picures/8 86.png" alt="" class="right-hero-iimg">
         <div class="hero-section-container">
@@ -80,7 +80,7 @@
 
     <!-- ================second section====================== -->
 
-    <section class="second-main-section">
+    <section class="second-main-section ">
     <div class="second-main-container">
         <img src="picures/white-buble.png" alt="" class="white-buble">
         <img src="picures/leaf.png" alt="" class="leaf">
@@ -119,7 +119,7 @@
 
 
     <!-- ================text with background section====================== -->
-    <section class="background-with-text-main-section">
+    <section class="background-with-text-main-section ">
      <div class="background-text-main-container">
         <h1>洗うという時間を、整える</h1>
         <p class="first-background-text">
@@ -148,7 +148,7 @@
     <!-- ================text with background section====================== -->
 
     <!-- ================polygon circle section====================== -->
-    <div class="gosai-container" id="gosaiRoot">
+    <section class="gosai-container " id="gosaiRoot">
     <div class="gosai-header">
     <h1 class="gosai-main-title">贅沢の五重奏とは。</h1>
     <p class="gosai-subtitle">五つの要素が、静かに表現する構造。</p>
@@ -193,7 +193,7 @@
     <div class="gosai-footer-text">
     肌と心に響く、五つの質的な構造
     </div>
-    </div>
+</section>
 
     <!-- ================polygon circle section====================== -->
 
@@ -202,7 +202,7 @@
 
     <!-- ================os new image text section====================== -->
 
-    <section class="new-image-text">
+    <section class="new-image-text ">
     <div class="new-image-text-main-container">
 
     <!-- card 1 -->
@@ -328,7 +328,7 @@
 
 
     <!-- ================os calm section====================== -->
-    <section class="main-os-sent-section main-os-calm-section">
+    <section class="main-os-sent-section main-os-calm-section ">
     <div class="os-sent-container">
 
 
@@ -369,7 +369,7 @@
 
 
     <!-- ================os sent section====================== -->
-    <section class="main-os-sent-section">
+    <section class="main-os-sent-section ">
     <div class="os-sent-container">
             <h5 class="mbl-main-os-sent-section-h5"><span class="number-ott">05</span> <span class="slash"></span> <span class="text-ott">SCENT</span></h5>
     <div class="os-content">
@@ -399,7 +399,7 @@
 
 
     <!-- ================os sent section====================== -->
-
+</div>
 
     <!-- ================grid cards====================== -->
     <section class="main-grid-container" data-aos="fade-down" data-aos-delay="250">
@@ -610,5 +610,67 @@
 <script>
   AOS.init();
 </script>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery.ripples.min.js"></script>
+
+<script>
+$(document).ready(function () {
+
+  function initRipples() {
+    if ($(window).width() < 768) return; // Only desktop
+
+    $(".ripple-effect section").each(function () {
+      var $el = $(this);
+
+      // Initialize ripples with optimized settings
+      $el.ripples({
+        resolution: 128,      // lower = faster
+        dropRadius: 15,       // smaller = lighter
+        perturbance: 0.08,    // subtle ripples
+        interactive: false    // disables continuous pointer tracking
+      });
+
+      // Throttle mousemove for performance
+      let lastDrop = 0;
+      $el.on("mousemove.ripples", function (e) {
+        const now = Date.now();
+        if (now - lastDrop > 50) { // max 20 fps
+          var x = e.pageX - $el.offset().left;
+          var y = e.pageY - $el.offset().top;
+          $el.ripples("drop", x, y, 20, 0.08);
+          lastDrop = now;
+        }
+      });
+    });
+  }
+
+  function destroyRipples() {
+    $(".ripple-effect section").each(function () {
+      var $el = $(this);
+      if ($el.data('ripples')) {
+        $el.ripples('destroy');
+        $el.off('mousemove.ripples'); // remove event listener
+      }
+    });
+  }
+
+  // Initial setup
+  initRipples();
+
+  // Re-init/destroy on window resize
+  $(window).resize(function () {
+    if ($(window).width() >= 768) {
+      destroyRipples();
+      initRipples();
+    } else {
+      destroyRipples();
+    }
+  });
+
+});
+</script>
+
+
     </body>
     </html>
