@@ -2004,7 +2004,7 @@ span.gosai-structure-text::before {
     .main-os-calm-section{
         background-image: url(picures/mbl1.png) !important;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
     }
     .grid-card-section-heading{
     font-size: 30px;
@@ -2050,10 +2050,33 @@ span.gosai-structure-text::before {
     height: 550px !important;
 }
 
+}
+
+
+@media (min-width:1500px) {
+    .single-product-container{
+        justify-content: center !important;
+    }
+}
 
 
 
-
-
+@media (min-width:320px) and (max-width:500px) {
+    .main-os-calm-section .os-main-content{
+        margin: 0 !important;
+    }
+   .main-os-calm-section {
+    height: 800px !important;
+    margin-top: -100px !important;
+}
+.main-os-calm-section .os-sub-heading{
+    margin-top: -80px !important;
+}
+.main-os-sent-section {
+    margin: -125px 0 0 !important;
+}
+.bottom-image-text-main {
+    height: 650px !important;
+}
 
 }
