@@ -627,7 +627,7 @@ $(document).ready(function () {
       $el.ripples({
         resolution: 128,      // lower = faster
         dropRadius: 15,       // smaller = lighter
-        perturbance: 0.05,    // subtle ripples
+        perturbance: 0.01,    // subtle ripples
         interactive: false    // disables continuous pointer tracking
       });
 
@@ -638,7 +638,7 @@ $(document).ready(function () {
         if (now - lastDrop > 50) { // max 20 fps
           var x = e.pageX - $el.offset().left;
           var y = e.pageY - $el.offset().top;
-          $el.ripples("drop", x, y, 20, 0.08);
+          $el.ripples("drop", x, y, 20, 0.02);
           lastDrop = now;
         }
       });
