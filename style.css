@@ -53,18 +53,6 @@
     display: block;
 }   
 }
-@media (max-width:990px) {
-    .hero-product{
-    display: none;
-}
-}
-
-    @media (min-width:990px) {
-        .hero-section-main {
-        background-image: url(picures/FV背景.png);
-        background-repeat: no-repeat;
-      
-        }
             .right-hero-iimg{
     border-radius: 50%;
     position: absolute;
@@ -79,26 +67,37 @@
     bottom: 17%;
     width:200px;
     }
+
+    @media (min-width:990px) {
+        .hero-section-main {
+        background-image: url(picures/FV背景.png);
+        background-repeat: no-repeat;
+      
+        }
+
     }
 
 @media (max-width:990px) {
      .hero-section-main {
-    background-image: url(picures/Group\ 16.png) !important;
+    background-image: url(picures/newFrame\ 25\ \(3\).png) !important;
     background-repeat: no-repeat !important;
     background-size: 100% 100% !important;
-    height: 900px !important;
+    padding: 6rem 0;
     justify-content: end !important;
     align-items: end !important;
      }
-    
+    .hero-product{
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    }
      .hero-section-container {
     max-width: 280px !important;
     width: 100% !important;
-    padding: 6rem 0rem !important;
+    padding:0 0 6rem !important;
 }
-.left-hero-iimg,.right-hero-iimg{
-    display: none;
-}
+
 
 .second-main-section {
     margin-top: -60px !important;
@@ -160,6 +159,7 @@ display: inline-block;
 letter-spacing: 10%;
 margin: 0 0 16px;
 color: #3A2A23;
+text-shadow: 0 0 10px rgba(255, 255, 255, 1);
 
 }
 .hero-content p{
@@ -2097,4 +2097,52 @@ span.gosai-structure-text::before {
     height: 650px !important;
 }
 
+}
+
+
+@media (min-width:768px) and (max-width:990px) {
+    .hero-product {
+    position: absolute;
+    top: 30%;
+    left: 8%;
+    width: 60%;
+}
+}
+
+@media (max-width:768px) {
+    .hero-section-main{
+        padding: 0 !important;
+    }
+    .hero-section-main {
+        height: 900px;
+    }
+    .hero-content{
+        padding-bottom: 50px;
+    }
+}
+
+@media (max-width:500px) {
+   .hero-product {
+    position: absolute;
+    top: 200px;
+    left: -5%;
+    width: 100%;
+}
+.right-hero-iimg,.left-hero-iimg{
+    width: 100px;
+}
+}
+@media (min-width:500px) and (max-width:768px) {
+.hero-product {
+    position: absolute;
+    top: 164px;
+    left: 0%;
+    width: 84%;
+}
+}
+
+@media (max-width:990px) {
+    .second-main-section {
+    margin-top: -124px !important;
+}
 }
