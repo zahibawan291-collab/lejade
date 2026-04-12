@@ -1,618 +1,352 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    </head>
-    <body>
-    <!-- ================header====================== -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>L'ejade - 静かな贅沢</title>
+<link rel="stylesheet" href="CSS/style.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+  /* 安定化のためのベーススタイル */
+  [data-text-jp], [data-text-zh], [data-text-en] { transition: opacity 0.1s; }
+  .language-dropdown { cursor: pointer; background: transparent; border: 1px solid #ddd; padding: 6px 12px; border-radius: 30px; font-family: inherit; }
+ 
+</style>
+</head>
+<body>
 
-    <div class="header-container-main">
-    <div class="website-logo-main">
-    <img class="website-logo" src="picures/logo (2).png" alt="">
+<!-- ================ HEADER ====================== -->
+<div class="header-container-main">
+  <div class="website-logo-main">
+    <img class="website-logo" src="images/logo (2).png" alt="L'ejade logo">
+  </div>
+  <div class="header-links">
+    <div class="language-switcher">
+      <select class="language-dropdown" id="languageSelect">
+        <option value="jp" selected>JP</option>
+        <option value="zh">中文</option>
+        <option value="en">English</option>
+      </select>
     </div>
-    <div class="header-links">
-    <a href="">JP / EN</a>
-    <a href="">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-    <path d="M3.125 2.5C2.95924 2.5 2.80027 2.56585 2.68306 2.68306C2.56585 2.80027 2.5 2.95924 2.5 3.125C2.5 3.29076 2.56585 3.44973 2.68306 3.56694C2.80027 3.68415 2.95924 3.75 3.125 3.75H3.4325C3.56821 3.75023 3.70016 3.79464 3.80841 3.8765C3.91666 3.95836 3.99531 4.07323 4.0325 4.20375L6.015 11.1413C6.12713 11.5328 6.36368 11.8771 6.68888 12.1223C7.01408 12.3674 7.41025 12.5 7.8175 12.5H13.5287C13.9036 12.5001 14.2698 12.3878 14.5802 12.1777C14.8905 11.9676 15.1308 11.6693 15.27 11.3212L17.1125 6.71375C17.1882 6.52416 17.2164 6.3189 17.1945 6.11591C17.1726 5.91293 17.1013 5.7184 16.9869 5.54932C16.8724 5.38025 16.7183 5.24178 16.538 5.14602C16.3577 5.05026 16.1567 5.00013 15.9525 5H5.56L5.23375 3.86C5.12191 3.46847 4.88564 3.12398 4.56068 2.87862C4.23571 2.63326 3.83969 2.50036 3.4325 2.5H3.125ZM7.2175 10.7963L5.9175 6.25H15.9525L14.1087 10.8575C14.0623 10.9734 13.9823 11.0727 13.8789 11.1426C13.7755 11.2126 13.6536 11.25 13.5287 11.25H7.8175C7.68179 11.2498 7.54984 11.2054 7.44159 11.1235C7.33334 11.0416 7.25469 10.9268 7.2175 10.7963ZM8.125 17.5C8.37123 17.5 8.61505 17.4515 8.84253 17.3573C9.07002 17.263 9.27672 17.1249 9.45083 16.9508C9.62494 16.7767 9.76305 16.57 9.85727 16.3425C9.9515 16.115 10 15.8712 10 15.625C10 15.3788 9.9515 15.135 9.85727 14.9075C9.76305 14.68 9.62494 14.4733 9.45083 14.2992C9.27672 14.1251 9.07002 13.987 8.84253 13.8927C8.61505 13.7985 8.37123 13.75 8.125 13.75C7.62772 13.75 7.15081 13.9475 6.79917 14.2992C6.44754 14.6508 6.25 15.1277 6.25 15.625C6.25 16.1223 6.44754 16.5992 6.79917 16.9508C7.15081 17.3025 7.62772 17.5 8.125 17.5ZM8.125 16.25C7.95924 16.25 7.80027 16.1842 7.68306 16.0669C7.56585 15.9497 7.5 15.7908 7.5 15.625C7.5 15.4592 7.56585 15.3003 7.68306 15.1831C7.80027 15.0658 7.95924 15 8.125 15C8.29076 15 8.44973 15.0658 8.56694 15.1831C8.68415 15.3003 8.75 15.4592 8.75 15.625C8.75 15.7908 8.68415 15.9497 8.56694 16.0669C8.44973 16.1842 8.29076 16.25 8.125 16.25ZM13.125 17.5C13.3712 17.5 13.615 17.4515 13.8425 17.3573C14.07 17.263 14.2767 17.1249 14.4508 16.9508C14.6249 16.7767 14.763 16.57 14.8573 16.3425C14.9515 16.115 15 15.8712 15 15.625C15 15.3788 14.9515 15.135 14.8573 14.9075C14.763 14.68 14.6249 14.4733 14.4508 14.2992C14.2767 14.1251 14.07 13.987 13.8425 13.8927C13.615 13.7985 13.3712 13.75 13.125 13.75C12.6277 13.75 12.1508 13.9475 11.7992 14.2992C11.4475 14.6508 11.25 15.1277 11.25 15.625C11.25 16.1223 11.4475 16.5992 11.7992 16.9508C12.1508 17.3025 12.6277 17.5 13.125 17.5ZM13.125 16.25C12.9592 16.25 12.8003 16.1842 12.6831 16.0669C12.5658 15.9497 12.5 15.7908 12.5 15.625C12.5 15.4592 12.5658 15.3003 12.6831 15.1831C12.8003 15.0658 12.9592 15 13.125 15C13.2908 15 13.4497 15.0658 13.5669 15.1831C13.6842 15.3003 13.75 15.4592 13.75 15.625C13.75 15.7908 13.6842 15.9497 13.5669 16.0669C13.4497 16.1842 13.2908 16.25 13.125 16.25Z" fill="#2E2B28"/>
-    </svg>
+    <a href="#" aria-label="カート">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M3.125 2.5C2.95924 2.5 2.80027 2.56585 2.68306 2.68306C2.56585 2.80027 2.5 2.95924 2.5 3.125C2.5 3.29076 2.56585 3.44973 2.68306 3.56694C2.80027 3.68415 2.95924 3.75 3.125 3.75H3.4325C3.56821 3.75023 3.70016 3.79464 3.80841 3.8765C3.91666 3.95836 3.99531 4.07323 4.0325 4.20375L6.015 11.1413C6.12713 11.5328 6.36368 11.8771 6.68888 12.1223C7.01408 12.3674 7.41025 12.5 7.8175 12.5H13.5287C13.9036 12.5001 14.2698 12.3878 14.5802 12.1777C14.8905 11.9676 15.1308 11.6693 15.27 11.3212L17.1125 6.71375C17.1882 6.52416 17.2164 6.3189 17.1945 6.11591C17.1726 5.91293 17.1013 5.7184 16.9869 5.54932C16.8724 5.38025 16.7183 5.24178 16.538 5.14602C16.3577 5.05026 16.1567 5.00013 15.9525 5H5.56L5.23375 3.86C5.12191 3.46847 4.88564 3.12398 4.56068 2.87862C4.23571 2.63326 3.83969 2.50036 3.4325 2.5H3.125ZM7.2175 10.7963L5.9175 6.25H15.9525L14.1087 10.8575C14.0623 10.9734 13.9823 11.0727 13.8789 11.1426C13.7755 11.2126 13.6536 11.25 13.5287 11.25H7.8175C7.68179 11.2498 7.54984 11.2054 7.44159 11.1235C7.33334 11.0416 7.25469 10.9268 7.2175 10.7963ZM8.125 17.5C8.37123 17.5 8.61505 17.4515 8.84253 17.3573C9.07002 17.263 9.27672 17.1249 9.45083 16.9508C9.62494 16.7767 9.76305 16.57 9.85727 16.3425C9.9515 16.115 10 15.8712 10 15.625C10 15.3788 9.9515 15.135 9.85727 14.9075C9.76305 14.68 9.62494 14.4733 9.45083 14.2992C9.27672 14.1251 9.07002 13.987 8.84253 13.8927C8.61505 13.7985 8.37123 13.75 8.125 13.75C7.62772 13.75 7.15081 13.9475 6.79917 14.2992C6.44754 14.6508 6.25 15.1277 6.25 15.625C6.25 16.1223 6.44754 16.5992 6.79917 16.9508C7.15081 17.3025 7.62772 17.5 8.125 17.5ZM8.125 16.25C7.95924 16.25 7.80027 16.1842 7.68306 16.0669C7.56585 15.9497 7.5 15.7908 7.5 15.625C7.5 15.4592 7.56585 15.3003 7.68306 15.1831C7.80027 15.0658 7.95924 15 8.125 15C8.29076 15 8.44973 15.0658 8.56694 15.1831C8.68415 15.3003 8.75 15.4592 8.75 15.625C8.75 15.7908 8.68415 15.9497 8.56694 16.0669C8.44973 16.1842 8.29076 16.25 8.125 16.25ZM13.125 17.5C13.3712 17.5 13.615 17.4515 13.8425 17.3573C14.07 17.263 14.2767 17.1249 14.4508 16.9508C14.6249 16.7767 14.763 16.57 14.8573 16.3425C14.9515 16.115 15 15.8712 15 15.625C15 15.3788 14.9515 15.135 14.8573 14.9075C14.763 14.68 14.6249 14.4733 14.4508 14.2992C14.2767 14.1251 14.07 13.987 13.8425 13.8927C13.615 13.7985 13.3712 13.75 13.125 13.75C12.6277 13.75 12.1508 13.9475 11.7992 14.2992C11.4475 14.6508 11.25 15.1277 11.25 15.625C11.25 16.1223 11.4475 16.5992 11.7992 16.9508C12.1508 17.3025 12.6277 17.5 13.125 17.5ZM13.125 16.25C12.9592 16.25 12.8003 16.1842 12.6831 16.0669C12.5658 15.9497 12.5 15.7908 12.5 15.625C12.5 15.4592 12.5658 15.3003 12.6831 15.1831C12.8003 15.0658 12.9592 15 13.125 15C13.2908 15 13.4497 15.0658 13.5669 15.1831C13.6842 15.3003 13.75 15.4592 13.75 15.625C13.75 15.7908 13.6842 15.9497 13.5669 16.0669C13.4497 16.1842 13.2908 16.25 13.125 16.25Z" fill="#2E2B28"/>
+      </svg>
     </a>
-    </div>
-    </div>
+  </div>
+</div>
 
-    <!-- ================header====================== -->
-    <!-- ================hero section====================== -->
-    <section class="hero-section-main " data-aos="fade-down" data-aos-delay="250"> 
-      <img src="picures/Frame 25.png" alt="" class="hero-product">
-   <img src="picures/8 86.png" alt="" class="left-hero-iimg">
-   <img src="picures/8 86.png" alt="" class="right-hero-iimg">
-        <div class="hero-section-container">
+<!-- ================ HERO ====================== -->
+<section class="hero-section-main" data-aos="fade-down" data-aos-delay="250">
+  <img src="images/Frame 25.png" alt="" class="hero-product">
+  <img src="images/8 86.png" alt="" class="left-hero-iimg">
+  <img src="images/8 86.png" alt="" class="right-hero-iimg">
+  <div class="hero-section-container">
     <div class="vertical-headings">
-        <div class="vertical-heading">
-            <span>ひ</span>
-            <span>と</span>
-            <span>つ</span>
-            <span>の</span>
-            <span>静</span>
-            <span>け</span>
-            <span>さ</span>
-            <span>へ</span>
-        </div>
-        <div class="vertical-heading">
-            <span>五</span>
-            <span>つ</span>
-            <span>の</span>
-            <span>思</span>
-            <span>想</span>
-            <span>が</span>
-        </div>
+      <div class="vertical-heading">
+        <span data-text-jp="ひ" data-text-zh="通" data-text-en="Towards">ひ</span>
+        <span data-text-jp="と" data-text-zh="往" data-text-en="a">と</span>
+        <span data-text-jp="つ" data-text-zh="一" data-text-en="single">つ</span>
+        <span data-text-jp="の" data-text-zh="片" data-text-en="serenity">の</span>
+        <span data-text-jp="静" data-text-zh="宁" data-text-en="">静</span>
+        <span data-text-jp="け" data-text-zh="静" data-text-en="">け</span>
+        <span data-text-jp="さ" data-text-zh="" data-text-en="">さ</span>
+        <span data-text-jp="へ" data-text-zh="" data-text-en="">へ</span>
+      </div>
+      <div class="vertical-heading">
+        <span data-text-jp="五" data-text-zh="五" data-text-en="Five">五</span>
+        <span data-text-jp="つ" data-text-zh="种" data-text-en="philosophies">つ</span>
+        <span data-text-jp="の" data-text-zh="思" data-text-en="">の</span>
+        <span data-text-jp="思" data-text-zh="想" data-text-en="">思</span>
+        <span data-text-jp="想" data-text-zh="汇" data-text-en="">想</span>
+        <span data-text-jp="が" data-text-zh="聚" data-text-en="">が</span>
+      </div>
     </div>
     <div class="hero-content">
-        <h1>贅沢の五重奏</h1>
-        <p>ラグジュリアスハーモニー</p>
-        <h5>
-        LOXURIOUS HARMONY <br>
-        BODY SOAP
-        </h5>
-        <span>MADE in JAPAN</span>
-        <div>
-        <a href="#" class="buy-button">Buy</a>
+      <h1 data-text-jp="贅沢の五重奏" data-text-zh="奢华的五重奏" data-text-en="A quintet of luxury">贅沢の五重奏</h1>
+      <p data-text-jp="ラグジュリアスハーモニー" data-text-zh="奢雅和谐" data-text-en="Luxurious Harmony">ラグジュリアスハーモニー</p>
+      <h5><span data-text-jp="LOXURIOUS HARMONY" data-text-zh="LOXURIOUS HARMONY" data-text-en="LUXURIOUS HARMONY">LOXURIOUS HARMONY</span><br><span data-text-jp="BODY SOAP" data-text-zh="沐浴露" data-text-en="BODY SOAP">BODY SOAP</span></h5>
+      <span data-text-jp="MADE in JAPAN" data-text-zh="日本制造" data-text-en="MADE in JAPAN">MADE in JAPAN</span>
+      <div><a href="#" class="buy-button" data-text-jp="Buy" data-text-zh="购买" data-text-en="Buy">Buy</a></div>
     </div>
-    </div>
-   </div>
-  <div>
-</div>
-
-    </section>
-    
-    
-    
-    
-    <!-- ================hero section====================== -->
-
-
-
-    <!-- ================second section====================== -->
-
-    <section class="second-main-section " data-aos="fade-down" data-aos-delay="250">
-    <div class="second-main-container">
-        <img src="picures/white-buble.png" alt="" class="white-buble">
-        <img src="picures/leaf.png" alt="" class="leaf">
-    <div class="second-section-header">
-        <h1>感覚の旅へ</h1>
-        <p>肌と心が出会う瞬間。ここから始まる。</p>
-    </div>
-    <div class="second-section-cards">
-        <!-- card 1 -->
-        <div class="second-single-card"> 
-            <h1>泡で包む</h1>
-            <p>触れる前から、やわらぐ</p>
-        </div>
-
-        <!-- card 2 -->
-        <div class="second-single-card"> 
-            <h1>摩擦を減らす</h1>
-            <p>こすらないという選択</p>
-        </div>
-
-        <!-- card 3 -->
-         <div class="second-single-card"> 
-            <h1>香りの余韻</h1>
-            <p>残るのは、静けさ</p>
-        </div>
-    </div>    
-    </div>
-    </section>
-    
-
-
-
-    <!-- ================second section====================== -->
-
-
-
-
-    <!-- ================text with background section====================== -->
-    <section class="background-with-text-main-section " data-aos="fade-down" data-aos-delay="250">
-     <div class="background-text-main-container">
-        <h1>洗うという時間を、整える</h1>
-        <p class="first-background-text">
-       <span class="custom-spacing">
-        肌を洗うという行為は、<br>
-        ただ汚れを落とすだけの時間ではありません。<br><br>
-       </span>
-        泡のやわらかさ。<br>
-        触れるときの摩擦。<br>
-        そして、静かに残る香り。<br><br>
-        その一つひとつが重なり合うことで、<br>
-        肌と心は、ゆっくりと整っていきます。
-       <div class="custom-dots">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-       </div>
-       <p class="last-background-text">
-        このボディシャンプーは、<br>    
-        <span>その体験を</span> <span>「五つの要素の調和」</span>として設計しました。</p>
-        </p>
-     </div>
-    </section>
- 
-    <!-- ================text with background section====================== -->
-
-    <!-- ================polygon circle section====================== -->
-    <section class="gosai-container " id="gosaiRoot" data-aos="fade-down" data-aos-delay="250">
-    <div class="gosai-header">
-    <h1 class="gosai-main-title">贅沢の五重奏とは。</h1>
-    <p class="gosai-subtitle">五つの要素が、静かに表現する構造。</p>
-    </div>
-
-    <div class="gosai-section">
-    <div class="gosai-background-pattern"></div>
-
-    <svg class="gosai-svg-layer" viewBox="0 0 700 700" preserveAspectRatio="xMidYMid meet">
-    <defs>
-    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
-    <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
-    <feMerge>
-    <feMergeNode in="offsetblur" />
-    <feMergeNode in="SourceGraphic" />
-    </feMerge>
-    </filter>
-    </defs>
-
-    <circle cx="350" cy="350" r="240" class="orbit-circle-path" stroke="white" stroke-width="1" fill="none" />
-
-    <circle cx="350" cy="350" r="238" stroke="rgba(210, 190, 165, 0.3)" stroke-width="1" fill="none" stroke-dasharray="3 6" />
-
-    </svg>
-
-    <div class="gosai-circle-container" id="circleContainer">
-    <div class="gosai-center-circle">
-    <div class="gosai-center-text">
-    静の構造
-    <span class="gosai-structure-text">structure</span>
-    </div>
-    </div>
-
-    <div class="gosai-circle gosai-circle-1">整える <img src="picures/star.png" alt="" class="star"></div>
-    <div class="gosai-circle gosai-circle-2">満たす <img src="picures/star.png" alt="" class="star"></div>
-    <div class="gosai-circle gosai-circle-3">守る <img src="picures/star.png" alt="" class="star"></div>
-    <div class="gosai-circle gosai-circle-4">澄ませる <img src="picures/star.png" alt="" class="star"></div>
-    <div class="gosai-circle gosai-circle-5">纏わせる <img src="picures/star.png" alt="" class="star"></div>
-    </div>
-    </div>
-
-    <div class="gosai-footer-text">
-    肌と心に響く、五つの質的な構造
-    </div>
+  </div>
 </section>
 
-    <!-- ================polygon circle section====================== -->
+<!-- ================ SECOND SECTION ====================== -->
+<section class="second-main-section" data-aos="fade-down" data-aos-delay="250">
+  <div class="second-main-container">
+    <img src="images/white-buble.png" alt="" class="white-buble">
+    <img src="images/leaf.png" alt="" class="leaf">
+    <div class="second-section-header">
+      <h1 data-text-jp="感覚の旅へ" data-text-zh="开启感官之旅" data-text-en="A journey of the senses">感覚の旅へ</h1>
+      <p data-text-jp="肌と心が出会う瞬間。ここから始まる。" data-text-zh="肌肤与心灵相遇的瞬间。从这里开始。" data-text-en="The moment skin and mind meet. It begins here.">肌と心が出会う瞬間。ここから始まる。</p>
+    </div>
+    <div class="second-section-cards">
+      <div class="second-single-card"><h1 data-text-jp="泡で包む" data-text-zh="以泡沫包裹" data-text-en="Wrapped in foam">泡で包む</h1><p data-text-jp="触れる前から、やわらぐ" data-text-zh="在触碰之前，便已柔和" data-text-en="Softening before even touching">触れる前から、やわらぐ</p></div>
+      <div class="second-single-card"><h1 data-text-jp="摩擦を減らす" data-text-zh="减少摩擦" data-text-en="Reducing friction">摩擦を減らす</h1><p data-text-jp="こすらないという選択" data-text-zh="选择不搓洗" data-text-en="The choice not to scrub">こすらないという選択</p></div>
+      <div class="second-single-card"><h1 data-text-jp="香りの余韻" data-text-zh="香气的余韵" data-text-en="The lingering scent">香りの余韻</h1><p data-text-jp="残るのは、静けさ" data-text-zh="留下的，是宁静" data-text-en="What remains is tranquility">残るのは、静けさ</p></div>
+    </div>
+  </div>
+</section>
 
+<!-- ================ TEXT WITH BACKGROUND ====================== -->
+<section class="background-with-text-main-section" data-aos="fade-down" data-aos-delay="250">
+  <div class="background-text-main-container">
+    <h1 data-text-jp="洗うという時間を、整える" data-text-zh="让清洗的时光，变得从容" data-text-en="Refining the time spent washing">洗うという時間を、整える</h1>
+    <div class="first-background-text">
+      <span data-text-jp="肌を洗うという行為は、<br>ただ汚れを落とすだけの時間ではありません。<br><br>" data-text-zh="清洗肌肤的行为，<br>并不只是去除污垢的时光。<br><br>" data-text-en="The act of washing your skin <br> is not merely a time to remove dirt.<br><br>">肌を洗うという行為は、<br>ただ汚れを落とすだけの時間ではありません。<br><br></span>
+      <span data-text-jp="泡のやわらかさ。<br>触れるときの摩擦。<br>そして、静かに残る香り。<br><br>その一つひとつが重なり合うことで、<br>肌と心は、ゆっくりと整っていきます。" data-text-zh="泡沫的柔软。<br>触碰时的摩擦。<br>以及，悄然留存的香气。<br><br>这些元素层层交织，<br>让肌肤与心灵得到缓缓调理。" data-text-en="The softness of the foam.<br>The friction upon touch.<br>And the scent that quietly remains.<br><br>As each of these elements intertwines,<br>both skin and mind are slowly rebalanced.">泡のやわらかさ。<br>触れるときの摩擦。<br>そして、静かに残る香り。<br><br>その一つひとつが重なり合うことで、<br>肌と心は、ゆっくりと整っていきます。</span>
+      <div class="custom-dots"><span></span><span></span><span></span><span></span></div>
+      <p class="last-background-text"><span data-text-jp="このボディシャンプーは、<br>" data-text-zh="这款沐浴露，<br>" data-text-en="This body wash was <br>">このボディシャンプーは、<br></span><span data-text-jp="その体験を" data-text-zh="将这种体验" data-text-en="designed to make that experience ">その体験を</span><span data-text-jp="「五つの要素の調和」" data-text-zh="设计为「五个要素的和谐」" data-text-en="a harmony of five elements.">「五つの要素の調和」</span><span data-text-jp="として設計しました。" data-text-zh="。" data-text-en=" as a harmony of five elements.">として設計しました。</span></p>
+    </div>
+  </div>
+</section>
 
+<!-- ================ POLYGON CIRCLE (五重奏) ====================== -->
+<section class="gosai-container" id="gosaiRoot" data-aos="fade-down" data-aos-delay="250">
+  <div class="gosai-header"><h1 class="gosai-main-title" data-text-jp="贅沢の五重奏とは。" data-text-zh="何谓奢华的五重奏。" data-text-en="What is the quintet of luxury?">贅沢の五重奏とは。</h1><p class="gosai-subtitle" data-text-jp="五つの要素が、静かに表現する構造。" data-text-zh="五种要素静静展现的结构。" data-text-en="A structure quietly expressed by five elements.">五つの要素が、静かに表現する構造。</p></div>
+  <div class="gosai-section">
+    <svg class="gosai-svg-layer" viewBox="0 0 700 700" preserveAspectRatio="xMidYMid meet"><defs><filter id="softGlow"><feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><circle cx="350" cy="350" r="240" stroke="white" stroke-width="1" fill="none"/><circle cx="350" cy="350" r="238" stroke="rgba(210,190,165,0.3)" stroke-width="1" fill="none" stroke-dasharray="3 6"/></svg>
+    <div class="gosai-circle-container" id="circleContainer">
+      <div class="gosai-center-circle"><div class="gosai-center-text"><span data-text-jp="静の構造" data-text-zh="静谧的结构" data-text-en="Structure of tranquility">静の構造</span><span class="gosai-structure-text" data-text-jp="structure" data-text-zh="structure" data-text-en="structure">structure</span></div></div>
+      <div class="gosai-circle gosai-circle-1"><span data-text-jp="整える" data-text-zh="调理" data-text-en="Balance">整える</span><img src="images/star.png" alt="" class="star"></div>
+      <div class="gosai-circle gosai-circle-2"><span data-text-jp="満たす" data-text-zh="滋养" data-text-en="Nourish">満たす</span><img src="images/star.png" alt="" class="star"></div>
+      <div class="gosai-circle gosai-circle-3"><span data-text-jp="守る" data-text-zh="守护" data-text-en="Protect">守る</span><img src="images/star.png" alt="" class="star"></div>
+      <div class="gosai-circle gosai-circle-4"><span data-text-jp="澄ませる" data-text-zh="澄澈" data-text-en="Calm">澄ませる</span><img src="images/star.png" alt="" class="star"></div>
+      <div class="gosai-circle gosai-circle-5"><span data-text-jp="纏わせる" data-text-zh="萦绕" data-text-en="Scent">纏わせる</span><img src="images/star.png" alt="" class="star"></div>
+    </div>
+  </div>
+  <div class="gosai-footer-text" data-text-jp="肌と心に響く、五つの質的な構造" data-text-zh="触动肌肤与心灵的，五种质感结构" data-text-en="Five qualitative structures that resonate with skin and mind">肌と心に響く、五つの質的な構造</div>
+</section>
 
-
-    <!-- ================os new image text section====================== -->
-
-    <section class="new-image-text " data-aos="fade-down" data-aos-delay="250">
-    <div class="new-image-text-main-container">
-
-    <!-- card 1 -->
-    <h1 class="first-new-imagetext-h1">肌と心に響く、<br>
-    五つの働き</h1>
+<!-- ================ NEW IMAGE TEXT (5つの働き) ====================== -->
+<section class="new-image-text" data-aos="fade-down" data-aos-delay="250">
+  <div class="new-image-text-main-container">
+    <h1 class="first-new-imagetext-h1" data-text-jp="肌と心に響く、<br>五つの働き" data-text-zh="触动肌肤与心灵的，<br>五种机能" data-text-en="Five functions that <br> resonate with skin and mind">肌と心に響く、<br>五つの働き</h1>
+    <!-- CARD 1: 整える -->
     <div class="first-new-imagetext">
-    <div class="img-text-img">
-    <img src="picures/商材.png" alt="">
+      <div class="img-text-img"><img src="images/商材.png" alt=""></div>
+      <div class="image-text-new-content-wrapper">
+        <div class="os-sub-heading">
+          <span data-text-jp="整" data-text-zh="调" data-text-en="B">整</span>
+          <span data-text-jp="え" data-text-zh="理" data-text-en="a">え</span>
+          <span data-text-jp="る" data-text-zh="" data-text-en="l">る</span>
+          <span data-text-jp="" data-text-zh="" data-text-en="a"></span>
+          <span data-text-jp="" data-text-zh="" data-text-en="n"></span>
+          <span data-text-jp="" data-text-zh="" data-text-en="c"></span>
+          <span data-text-jp="" data-text-zh="" data-text-en="e"></span>
+        </div>
+        <div class="img-text-content">
+          <h5><span class="number-ott">01</span><span class="slash"></span><span class="text-ott" data-text-jp="BALANCE" data-text-zh="BALANCE" data-text-en="BALANCE">BALANCE</span></h5>
+          <h4 data-text-jp="素肌を、静謐へと調律する。" data-text-zh="将素肌调谐至静谧之境。" data-text-en="Tuning bare skin toward serenity.">素肌を、静謐へと調律する。</h4>
+          <p data-text-jp="洗うという行為を、ただ落とすための時間で終わらせない。<br><br>石鹸由来の洗浄力を芯に、<br> ベタイン系を含む複数の洗浄成分を重ねることで、泡立ち、清浄感、そして洗い上がりのやわらかさを美しく均衡させました。<br><br>余分な汚れだけをほどき、うるおいを奪いすぎない。<br> その精緻な調和が、肌を本来あるべき静けさへと導いていきます。" data-text-zh="让清洗这一行为，不仅止于去除污垢。<br><br>以皂基的清洁力为核心，通过叠加含甜菜碱在内的多种清洁成分，将起泡性、洁净感、以及洗后肌肤的柔软度，完美地平衡在一起。<br><br>仅去除多余污垢，不过度剥夺肌肤水分。这种精妙的平衡，引导肌肤回归本真的宁静。" data-text-en="Never letting the act of washing end as merely a time to cleanse.<br><br>With soap-based cleansing power at its core, layered with multiple cleansing ingredients including betaine-based compounds, we have beautifully balanced the lather, the sense of cleanliness, and the post-wash softness.<br><br>Unraveling only excess impurities without stripping away too much moisture. That exquisite harmony guides the skin to its intrinsic tranquility.">洗うという行為を、ただ落とすための時間で終わらせない。<br><br>石鹸由来の洗浄力を芯に、 ベタイン系を含む複数の洗浄成分を重ねることで、泡立ち、清浄感、そして洗い上がりのやわらかさを美しく均衡させました。<br><br>余分な汚れだけをほどき、うるおいを奪いすぎない。 その精緻な調和が、肌を本来あるべき静けさへと導いていきます。</p>
+          <img src="images/buble.png" alt="">
+        </div>
+      </div>
     </div>
-    <div class="image-text-new-content-wrapper">
-    <div class="os-sub-heading">
-    <span>整</span>
-    <span>え</span>
-    <span>る</span>
+    <!-- CARD 2: 満たす -->
+    <div class="first-new-imagetext second-image-text" data-aos="fade-down">
+      <div class="img-text-img-second"><img src="images/nourish.png" alt="" class="nourish-now"><img src="images/7 1.png" alt="" class="onion"></div>
+      <div class="image-text-new-content-wrapper">
+        <div class="os-sub-heading">
+          <span data-text-jp="満" data-text-zh="滋" data-text-en="N">満</span>
+          <span data-text-jp="た" data-text-zh="养" data-text-en="o">た</span>
+          <span data-text-jp="す" data-text-zh="" data-text-en="u">す</span>
+          <span data-text-jp="" data-text-zh="" data-text-en="r"></span>
+          <span data-text-jp="" data-text-zh="" data-text-en="i"></span>
+          <span data-text-jp="" data-text-zh="" data-text-en="s"></span>
+          <span data-text-jp="" data-text-zh="" data-text-en="h"></span>
+        </div>
+        <div class="img-text-content">
+          <h5><span class="number-ott">02</span><span class="slash"></span><span class="text-ott" data-text-jp="NOURISH" data-text-zh="NOURISH" data-text-en="NOURISH">NOURISH</span></h5>
+          <h4 data-text-jp="幾重ものうるおいで、艶を織りなす。" data-text-zh="以层层水润，编织光泽。" data-text-en="Weaving a radiant glow through layers of moisture.">幾重ものうるおいで、艶を織りなす。</h4>
+          <p data-text-jp="肌に求められるのは、単一の保湿ではなく、<br> 重なり合ううるおいの層。<br><br>グリセリンやトレハロースの潤いに、アルガンオイル、<br> シアバター、ヒアルロン酸Naを重ね、<br> 水分と油分が響き合う保湿設計を描きました。<br><br>洗い流したあとの肌には、静かな艶の余韻が残ります。" data-text-zh="肌肤需要的并非单一的保湿，而是多层交织的滋润。<br><br>在甘油和海藻糖的滋润基础上，叠加摩洛哥坚果油、乳木果油、透明质酸钠，勾勒出水分与油分相互呼应的保湿体系。<br><br>在洗净后的肌肤上，留有静谧光泽的余韵。" data-text-en="What the skin requires is not a single form of hydration, but overlapping layers of moisture.<br><br>Layering the hydration of glycerin and trehalose with argan oil, shea butter, and sodium hyaluronate, we have designed a moisturizing profile where water and oil resonate together.<br><br>A lingering, quiet radiance remains on the skin after rinsing.">肌に求められるのは、単一の保湿ではなく、<br> 重なり合ううるおいの層。<br><br>グリセリンやトレハロースの潤いに、アルガンオイル、<br> シアバター、ヒアルロン酸Naを重ね、<br> 水分と油分が響き合う保湿設計を描きました。<br><br>洗い流したあとの肌には、静かな艶の余韻が残ります。</p>
+        </div>
+      </div>
+      <img src="images/gel 1.png" alt="" class="gel"><img src="images/4 3.png" alt="" class="flower">
     </div>
-
-    <div class="img-text-content">
-
-    <h5>
-    <span class="number-ott">01</span> 
-    <span class="slash"></span>
-    <span class="text-ott">BALANCE</span>
-    </h5>
-    <h4>素肌を、静謐へと調律する。</h4>
-    <p>
-    洗うという行為を、ただ落とすための時間で終わらせない。<br><br>
-    石鹸由来の洗浄力を芯に、<br>
-    <span>
-    ベタイン系を含む複数の洗浄成分を重ねることで、泡立ち、清浄感、<br>
-    そして洗い上がりのやわらかさを美しく均衡させました。<br> <br></span>
-    余分な汚れだけをほどき、うるおいを奪いすぎない。<br>
-    その精緻な調和が、肌を本来あるべき静けさへと導いていきます。
-    </p>
-    <img src="picures/buble.png" alt="">
+    <!-- CARD 3: 守る -->
+    <div class="final-bottom-main-new-custom">
+      <div class="final-bottom-image-text">
+        <h5><span class="number-ott">03</span><span class="slash"></span><span class="text-ott" data-text-jp="PROTECT" data-text-zh="PROTECT" data-text-en="PROTECT">PROTECT</span></h5>
+        <div class="bottom-image-text-main">
+          <div class="os-sub-heading">
+            <span data-text-jp="守" data-text-zh="守" data-text-en="P">守</span>
+            <span data-text-jp="る" data-text-zh="护" data-text-en="r">る</span>
+            <span data-text-jp="" data-text-zh="" data-text-en="o"></span>
+            <span data-text-jp="" data-text-zh="" data-text-en="t"></span>
+            <span data-text-jp="" data-text-zh="" data-text-en="e"></span>
+            <span data-text-jp="" data-text-zh="" data-text-en="c"></span>
+            <span data-text-jp="" data-text-zh="" data-text-en="t"></span>
+          </div>
+          <img src="images/8 87.png" alt="" class="big-buble">
+          <div class="bottom-image-text-content">
+            <h1 data-text-jp="うるおいを抱きとめる、見えない気品。" data-text-zh="锁住水润，隐形的高雅。" data-text-en="An invisible elegance that embraces moisture.">うるおいを抱きとめる、見えない気品。</h1>
+            <p data-text-jp="真に上質なうるおいとは、<br> 与えるだけでなく、逃がさぬことまで設計されているもの。<br><br>その思想のもと、セラミドとビタミンC誘導体を配合しました。<br><br>肌がうるおいを抱え込みやすい状態へ整え、<br> 乾燥によって揺らぎやすいコンディションにも穏やかに寄り添います。<br><br>その静かな強さが、肌の品格をそっと守ります。" data-text-zh="真正优质的保湿，不仅在于给予，更在于以防止流失的精心设计。<br><br>基于这一理念，添加神经酰胺和维生素C衍生物。<br><br>帮助肌肤调理至易于锁住水润的状态，温柔呵护因干燥而容易失衡的肌肤。<br><br>这份静谧的力量，温柔守护着肌肤的质感与格调。" data-text-en="Truly high-quality moisture is designed not only to be imparted, but also to be retained.<br><br>Based on that philosophy, we have formulated this with ceramide and vitamin C derivatives.<br><br>It prepares the skin to easily lock in moisture, gently attending to conditions prone to fluctuation due to dryness.<br><br>That quiet strength delicately protects the skin's dignity.">真に上質なうるおいとは、<br> 与えるだけでなく、逃がさぬことまで設計されているもの。<br><br>その思想のもと、セラミドとビタミンC誘導体を配合しました。<br><br>肌がうるおいを抱え込みやすい状態へ整え、<br> 乾燥によって揺らぎやすいコンディションにも穏やかに寄り添います。<br><br>その静かな強さが、肌の品格をそっと守ります。</p>
+          </div>
+        </div>
+        <img src="images/9 5.png" alt="" class="yellow">
+      </div>
     </div>
-    </div>
-    </div>
+  </div>
+</section>
 
-
-    <!-- card 2 -->
-    <div class="first-new-imagetext second-image-text" data-aos="fade-down" data-aos-delay="250" >
-    <div class="img-text-img-second">
-    <img src="picures/nourish.png" alt="" class="nourish-now">
-    <img src="picures/7 1.png" alt="" class="onion">
-    </div>
-    <div class="image-text-new-content-wrapper">
-    <div class="os-sub-heading">
-    <span>満</span>
-    <span>た</span>
-    <span>す</span>
-    </div>
-
-    <div class="img-text-content">
-    <h5>
-    <span class="number-ott">02</span> 
-    <span class="slash"></span>
-    <span class="text-ott">NOURISH </span>
-    </h5>
-    <h4>幾重ものうるおいで、艶を織りなす。</h4>
-    <p>
-        <span>
-    肌に求められるのは、単一の保湿ではなく、<br>
-    重なり合ううるおいの層。<br><br></span>
-    <span>
-    グリセリンやトレハロースの潤いに、アルガンオイル、<br> シアバター、ヒアルロン酸Naを重ね、<br>
-    水分と油分が響き合う保湿設計を描きました。<br><br></span>
-   <span>
-    洗い流したあとの肌には、<br>
-    静かな艶の余韻が残ります。
- </span>   
-</p>
-    </div>
-    </div>
-    <img src="picures/gel 1.png" alt="" class="gel">
-    <img src="picures/4 3.png" alt="" class="flower">
-    </div>
-
-    <!-- card 3 -->
-    <div class="final-bottom-main-new-custom" data-aos="fade-down" data-aos-delay="250">
-
-    <div class="final-bottom-image-text">
-    <h5>
-    <span class="number-ott">03</span> 
-    <span class="slash"></span>
-    <span class="text-ott">PROTECT</span>
-    </h5>
-
-    <div class="bottom-image-text-main">
-    <div class="os-sub-heading">
-    <span>守</span>
-    <span>る</span>
-    </div>
-    <img src="picures/8 87.png" alt="" class="big-buble">
-
-    <div class="bottom-image-text-content">
-    <h1>うるおいを抱きとめる、見えない気品。</h1>
-    <p>
-    <span>真に上質なうるおいとは、<br>
-    与えるだけでなく、逃がさぬことまで設計されているもの。<br><br></span>
-    <span>
-    その思想のもと、セラミドとビタミンC誘導体を配合しました。<br><br>
-    </span>
-    <span>
-    肌がうるおいを抱え込みやすい状態へ整え、<br>
-    乾燥によって揺らぎやすいコンディションにも穏やかに寄り添います。<br><br>
-   </span>
-   <span>
-    その静かな強さが、肌の品格をそっと守ります。
-</span>    
-</p>
-    </div>
-    </div>
-
-    <img src="picures/9 5.png" alt="" class="yellow">
-    </div>
-    </div>
-    </div>
-    </section>
-
-    <!-- ================os new image text section====================== -->
-
-
-
-
-    <!-- ================os calm section====================== -->
-    <section class="main-os-sent-section main-os-calm-section " data-aos="fade-down" data-aos-delay="250">
-    <div class="os-sent-container">
-
-
-
-        <div class="os-content">
-    <div class="os-sub-heading">
-    <span>澄</span>
-    <span>ま</span>
-    <span>せ</span>
-    <span>る</span>
-    </div>
-    <div class="os-main-content">
-    <h5><span class="number-ott">04</span> <span class="slash"></span> <span class="text-ott">CALM</span></h5>
-    <h1>覆い隠さず、<br> 清潔感に気品を宿す。</h1>
-    <p class="main-os-calm-section-para-hidden-desktop">
-    清潔感とは、強く香らせることではなく、余計な濁りを残さないことから生まれるもの。<br><br>
-    茶葉エキス、炭、アミノ酸を軸に、清浄補助成分を丁寧に重ねました。<br><br>
-    洗い上がりに残るのは、過剰な演出ではなく、<br>
-    静かに磨かれた清潔感の余韻です<br>
-    </p>
-    </div>
-    </div>
-
-       <p class="main-os-calm-section-para-hidden-mbl">
-    清潔感とは、強く香らせることではなく、余計な濁りを残さないことから生まれるもの。<br><br>
-    茶葉エキス、炭、アミノ酸を軸に、清浄補助成分を丁寧に重ねました。<br><br>
-    洗い上がりに残るのは、過剰な演出ではなく、<br>
-    静かに磨かれた清潔感の余韻です<br>
-    </p>
-
-
-
-    </div>        
-    </section>
-
-    <!-- ================os calm section====================== -->
-
-
-
-    <!-- ================os sent section====================== -->
-    <section class="main-os-sent-section " data-aos="fade-down" data-aos-delay="250">
-    <div class="os-sent-container">
-            <h5 class="mbl-main-os-sent-section-h5"><span class="number-ott">05</span> <span class="slash"></span> <span class="text-ott">SCENT</span></h5>
+<!-- ================ CALM SECTION (澄ませる) ====================== -->
+<section class="main-os-sent-section main-os-calm-section" data-aos="fade-down">
+  <div class="os-sent-container">
     <div class="os-content">
-    <div class="os-sub-heading">
-    <span>纏</span>
-    <span>わ</span>
-    <span>せ</span>
-    <span>る</span>
+      <div class="os-sub-heading">
+        <span data-text-jp="澄" data-text-zh="澄" data-text-en="C">澄</span>
+        <span data-text-jp="ま" data-text-zh="澈" data-text-en="a">ま</span>
+        <span data-text-jp="せ" data-text-zh="" data-text-en="l">せ</span>
+        <span data-text-jp="る" data-text-zh="" data-text-en="m">る</span>
+      </div>
+      <div class="os-main-content">
+        <h5><span class="number-ott">04</span><span class="slash"></span><span class="text-ott" data-text-jp="CALM" data-text-zh="CALM" data-text-en="CALM">CALM</span></h5>
+        <h1 data-text-jp="覆い隠さず、清潔感に気品を宿す。" data-text-zh="不刻意掩饰，让清净感中蕴含高雅。" data-text-en="Instilling elegance into cleanliness without concealing.">覆い隠さず、清潔感に気品を宿す。</h1>
+        <p class="main-os-calm-section-para-hidden-desktop" data-text-jp="清潔感とは、強く香らせることではなく、余計な濁りを残さないことから生まれるもの。<br><br>茶葉エキス、炭、アミノ酸を軸に、清浄補助成分を丁寧に重ねました。<br><br>洗い上がりに残るのは、過剰な演出ではなく、<br> 静かに磨かれた清潔感の余韻です。" data-text-zh="所谓清净感，并非来自浓烈的香气，而是源于不留丝毫杂质的纯净。<br><br>以茶叶提取物、炭、氨基酸为核心，精心叠加了多种净化辅助成分。<br><br>洗后留下的，并非刻意修饰，而是静谧打磨出的洁净余韵。" data-text-en="Cleanliness is born not from strong scents, but from leaving no unnecessary impurities behind.<br><br>Centered around tea leaf extract, charcoal, and amino acids, we have carefully layered supplemental cleansing ingredients.<br><br>What remains after washing is not an excessive embellishment, but the lingering sensation of quietly refined cleanliness.">清潔感とは、強く香らせることではなく、余計な濁りを残さないことから生まれるもの。<br><br>茶葉エキス、炭、アミノ酸を軸に、清浄補助成分を丁寧に重ねました。<br><br>洗い上がりに残るのは、過剰な演出ではなく、<br> 静かに磨かれた清潔感の余韻です。</p>
+      </div>
     </div>
-    <div class="os-main-content">
-    <h5><span class="number-ott">05</span> <span class="slash"></span> <span class="text-ott">SCENT</span></h5>
-    <h1>香りという余韻を、肌に静かに刻む。</h1>
-    <p>
-    ベルガモットの澄んだ光からはじまり、<br>
-    ミューゲ、マグノリア、ヒヤシンスの花々がほどけ、<br>
-    やがてサンダルウッドの穏やかな深みへと移ろいます。<br><br>
-    華やかに主張する香りではなく、<br>
-    立ち去ったあとに残る余韻。<br><br>
-    その静かな香りが、<br>
-    肌に品格を纏わせます。
-    </p>
+    <p class="main-os-calm-section-para-hidden-mbl" data-text-jp="清潔感とは、強く香らせることではなく、余計な濁りを残さないことから生まれるもの。<br><br>茶葉エキス、炭、アミノ酸を軸に、清浄補助成分を丁寧に重ねました。<br><br>洗い上がりに残るのは、過剰な演出ではなく、静かに磨かれた清潔感の余韻です。" data-text-zh="所谓清净感，并非来自浓烈的香气，而是源于不留丝毫杂质的纯净。<br><br>以茶叶提取物、炭、氨基酸为核心，精心叠加了多种净化辅助成分。<br><br>洗后留下的，并非刻意修饰，而是静谧打磨出的洁净余韵。" data-text-en="Cleanliness is born not from strong scents, but from leaving no unnecessary impurities behind.<br><br>Centered around tea leaf extract, charcoal, and amino acids, we have carefully layered supplemental cleansing ingredients.<br><br>What remains after washing is not an excessive embellishment, but the lingering sensation of quietly refined cleanliness.">清潔感とは、強く香らせることではなく、余計な濁りを残さないことから生まれるもの。<br><br>茶葉エキス、炭、アミノ酸を軸に、清浄補助成分を丁寧に重ねました。<br><br>洗い上がりに残るのは、過剰な演出ではなく、静かに磨かれた清潔感の余韻です。</p>
+  </div>
+</section>
+
+<!-- ================ SCENT SECTION (纏わせる) ====================== -->
+<section class="main-os-sent-section" data-aos="fade-down">
+  <div class="os-sent-container">
+    <div class="os-content">
+      <div class="os-sub-heading">
+        <span data-text-jp="纏" data-text-zh="萦" data-text-en="S">纏</span>
+        <span data-text-jp="わ" data-text-zh="绕" data-text-en="c">わ</span>
+        <span data-text-jp="せ" data-text-zh="" data-text-en="e">せ</span>
+        <span data-text-jp="る" data-text-zh="" data-text-en="n">る</span>
+        <span data-text-jp="" data-text-zh="" data-text-en="t"></span>
+      </div>
+      <div class="os-main-content">
+        <h5><span class="number-ott">05</span><span class="slash"></span><span class="text-ott" data-text-jp="SCENT" data-text-zh="SCENT" data-text-en="SCENT">SCENT</span></h5>
+        <h1 data-text-jp="香りという余韻を、肌に静かに刻む。" data-text-zh="将香气的余韵，静静镌刻于肌肤。" data-text-en="Quietly carving the lingering note of scent into the skin.">香りという余韻を、肌に静かに刻む。</h1>
+        <p data-text-jp="ベルガモットの澄んだ光からはじまり、<br> ミューゲ、マグノリア、ヒヤシンスの花々がほどけ、<br> やがてサンダルウッドの穏やかな深みへと移ろいます。<br><br>華やかに主張する香りではなく、<br> 立ち去ったあとに残る余韻。<br><br>その静かな香りが、<br> 肌に品格を纏わせます。" data-text-zh="始于佛手柑的清透光感，铃兰、木兰、风信子徐徐绽放，最终渐入檀香木的温润深邃。<br><br>并非张扬夺目的香气，而是离去后仍在的余韵。<br><br>那份静谧的香气，为肌肤披上优雅气质。" data-text-en="Beginning with the clear light of bergamot, the florals of muguet, magnolia, and hyacinth unfurl, eventually transitioning into the gentle depth of sandalwood.<br><br>Not a scent that assertively claims attention, but a lingering trail left behind after you depart.<br><br>That quiet fragrance cloaks the skin in elegance.">ベルガモットの澄んだ光からはじまり、<br> ミューゲ、マグノリア、ヒヤシンスの花々がほどけ、<br> やがてサンダルウッドの穏やかな深みへと移ろいます。<br><br>華やかに主張する香りではなく、<br> 立ち去ったあとに残る余韻。<br><br>その静かな香りが、<br> 肌に品格を纏わせます。</p>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- ================ HOW TO USE GRID ====================== -->
+<section class="main-grid-container" data-aos="fade-down">
+  <div class="grid-main-container">
+    <div class="main-grid-card-section-heading"><span></span><h1 class="grid-card-section-heading" data-text-jp="HOW TO USE" data-text-zh="使用方法" data-text-en="HOW TO USE">HOW TO USE</h1><span></span></div>
+    <div class="grid-cards-top">
+      <div class="grid-card"><p class="card-step" data-text-jp="STEP 1" data-text-zh="步骤1">STEP 1</p><h1 class="card-heading" data-text-jp="適量を、手のひらへ。" data-text-zh="取适量于掌心。" data-text-en="Dispense an appropriate amount into your palm.">適量を、手のひらへ。</h1><p class="card-description" data-text-jp="目安は1〜1.5プッシュ。過不足なく満たすことが、調和のはじまり。" data-text-zh="建议按压1～1.5次。恰到好处的分量，是和谐的开端。" data-text-en="The recommended amount is 1 to 1.5 pumps. Filling with neither too much nor too little is the beginning of harmony.">目安は1〜1.5プッシュ。過不足なく満たすことが、調和のはじまり。</p></div>
+      <div class="grid-card"><p class="card-step" data-text-jp="STEP 2" data-text-zh="步骤2">STEP 2</p><h1 class="card-heading" data-text-jp="こすらず、泡で包む。" data-text-zh="无需揉搓，让泡沫包裹。" data-text-en="Wrap in foam without scrubbing.">こすらず、泡で包む。</h1><p class="card-description" data-text-jp="空気を含ませたやわらかな泡が、肌をそっと受け止める。<br>摩擦を感じさせない所作が、穏やかな洗い上がりへ導く。" data-text-zh="饱含空气的柔润泡沫，轻柔地包裹肌肤。<br>减少摩擦感的动作，带来温和的洁面体验。" data-text-en="Soft, aerated foam gently cushions the skin.<br>A frictionless motion leads to a soothing wash.">空気を含ませたやわらかな泡が、肌をそっと受け止める。<br>摩擦を感じさせない所作が、穏やかな洗い上がりへ導く。</p></div>
+      <div class="grid-card"><p class="card-step" data-text-jp="STEP 3" data-text-zh="步骤3">STEP 3</p><h1 class="card-heading" data-text-jp="余計なものを、手放す。" data-text-zh="洗去多余的杂质。" data-text-en="Let go of the unnecessary.">余計なものを、手放す。</h1><p class="card-description" data-text-jp="きめ細かな泡が、不要なものだけを洗い流し、必要なうるおいはそっと残す。" data-text-zh="细腻的泡沫仅洗去不必要的污垢，温柔地留存必要的水分。" data-text-en="Fine, dense foam washes away only what is unneeded, gently leaving behind essential moisture.">きめ細かな泡が、不要なものだけを洗い流し、必要なうるおいはそっと残す。</p></div>
     </div>
-    </div>        
-    </section>
+    <div class="grid-card-bottom"><h1 data-text-jp="仕上げの一枚" data-text-zh="最后一步" data-text-en="The Finishing Touch">仕上げの一枚</h1><p data-text-jp="泡の余韻を、やさしく受け止めるために。<br>L'ejade専用タオルをお届けします。<br><br>やわらかな繊維が肌をいたわり、<br> 最後の所作まで、調和を保つ。" data-text-zh="为了温柔地承接泡沫的余韵。<br>附赠L'ejade专用毛巾。<br><br>柔软纤维呵护肌肤，从始至终维持和谐体验。" data-text-en="To gently catch the lingering essence of the foam.<br>We provide a towel exclusively for L'ejade.<br><br>Soft fibers care for the skin, <br> maintaining harmony through to the final gesture.">泡の余韻を、やさしく受け止めるために。<br>L'ejade専用タオルをお届けします。<br><br>やわらかな繊維が肌をいたわり、<br> 最後の所作まで、調和を保つ。</p></div>
+    <img src="images/15 3.png" alt="" class="towel">
+  </div>
+</section>
 
-
-
-    <!-- ================os sent section====================== -->
-
-
-    <!-- ================grid cards====================== -->
-    <section class="main-grid-container" data-aos="fade-down" data-aos-delay="250">
-
-    <div class="grid-main-container">
-
-    <div class="main-grid-card-section-heading">
-    <span></span>
-    <h1 class="grid-card-section-heading">HOW TO USE</h1>
-    <span></span>
-    </div>
-    <div class="grid-cards-top" data-aos="fade-down" data-aos-delay="250">
-    <!-- card 1  -->
-    <div class="grid-card">
-    <p class="card-step">STEP 1</p>
-    <h1 class="card-heading">適量を、手のひらへ。</h1>
-    <p class="card-description">目安は1〜1.5プッシュ。
-    過不足なく満たすことが、調和のはじまり。</p>
-    </div>
-
-    <!-- card 2  -->
-    <div class="grid-card">
-    <p class="card-step">STEP 2</p>
-    <h1 class="card-heading">こすらず、泡で包む。</h1>
-    <p class="card-description">空気を含ませたやわらかな泡が、肌をそっと受け止める。<br>
-    摩擦を感じさせない所作が、穏やかな洗い上がりへ導く。
-    </p>
-    </div>
-
-
-    <!-- card 3  -->
-    <div class="grid-card">
-    <p class="card-step">STEP 3</p>
-    <h1 class="card-heading">余計なものを、手放す。</h1>
-    <p class="card-description">きめ細かな泡が、不要なものだけを洗い流し、
-    必要なうるおいはそっと残す。</p>
-    </div>
-
-    </div>
-
-    <div class="grid-card-bottom" data-aos="fade-down" data-aos-delay="250"> 
-    <h1>仕上げの一枚</h1>
-    <p>
-    泡の余韻を、やさしく受け止めるために。<br>
-    L’ejade専用タオルをお届けします。
-    <br>
-    <br>
-    やわらかな繊維が肌をいたわり、<br>
-    最後の所作まで、調和を保つ。
-    </p>
-</div>
-<img src="picures/15 3.png" alt="" class="towel">
-    </div>
-    </section>
-
-
-
-
-    <!-- ================grid cards====================== -->
-    <!-- ================single product====================== -->
-    <section class="main-single-product" data-aos="fade-down" data-aos-delay="250">
-    <div class="single-product-container">
+<!-- ================ SINGLE PRODUCT ====================== -->
+<section class="main-single-product" data-aos="fade-down">
+  <div class="single-product-container">
     <div class="main-product-container-content">
-    <div class="main-product-container-content-first">
-    <h1>日常に、<br>
-    静かな<br>
-    贅沢を。</h1>
-    <p>
-    ラグジュリアスハーモニー
-    </p>
-    <span>L'ejade Body Soap </span>
-    <h5><span>¥4,280 (税別)</span><span>容量400ml</span></h5>
-    <h6>1回1〜1.5プッシュ使用</h6>
+      <div class="main-product-container-content-first"><h1 data-text-jp="日常に、<br>静かな<br>贅沢を。" data-text-zh="为日常，<br>增添<br>静谧奢华。" data-text-en="Quiet luxury<br> for your<br> everyday life.">日常に、<br>静かな<br>贅沢を。</h1><p data-text-jp="ラグジュリアスハーモニー" data-text-zh="奢华和谐" data-text-en="Luxurious Harmony">ラグジュリアスハーモニー</p><span data-text-jp="L'ejade Body Soap" data-text-zh="L'ejade 沐浴露" data-text-en="L'ejade Body Soap">L'ejade Body Soap</span><h5><span data-text-jp="¥4,280 (税別)" data-text-zh="¥4,280（不含税）" data-text-en="¥4,280 (excl. tax)">¥4,280 (税別)</span><span data-text-jp="容量400ml" data-text-zh="容量400ml" data-text-en="Volume: 400ml">容量400ml</span></h5><h6 data-text-jp="1回1〜1.5プッシュ使用" data-text-zh="每次使用1～1.5泵" data-text-en="Use 1 to 1.5 pumps per wash">1回1〜1.5プッシュ使用</h6></div>
+      <div class="main-product-container-content-second"><div class="product-action"><div class="main-qty-box"><span data-text-jp="数量" data-text-zh="数量" data-text-en="Quantity">数量</span><div class="quantity-box"><button class="qty-btn minus">−</button><input type="text" value="1" class="qty-input"><button class="qty-btn plus">+</button></div></div><button class="buy-btn" data-text-jp="BUY" data-text-zh="购买" data-text-en="BUY">BUY</button></div></div>
     </div>
+    <div class="single-product-img"><img src="images/アートボード 2 3.png" alt=""></div>
+  </div>
+</section>
 
-    <div class="main-product-container-content-second">
-    <div class="product-action">
-    <div class="main-qty-box">  
-    <span>数量</span>
-    <div class="quantity-box">
-    <button class="qty-btn minus">−</button>
-    <input type="text" value="1" class="qty-input">
-    <button class="qty-btn plus">+</button>
-    </div>
-    </div>
-    <button class="buy-btn">BUY</button>
-    </div>
-    </div>
-    </div>
+<!-- ================ LAST IMG TEXT (品質への姿勢) ====================== -->
+<section class="last-img-text" data-aos="fade-down">
+  <div class="last-img-text-container">
+    <div class="last-parent-first"><div class="last-parent-first-content"><h1 data-text-jp="品質への姿勢" data-text-zh="对品质的坚持" data-text-en="Our Commitment to Quality">品質への姿勢</h1><p><span data-text-jp="L'ejadeは、“肌への敬意”を込めて成分を選択しています。" data-text-zh="L'ejade秉持“对肌肤的敬意”精选成分。" data-text-en="L'ejade selects its ingredients with respect for the skin.">L'ejadeは、“肌への敬意”を込めて成分を選択しています。</span><span data-text-jp="必要なものだけを選び抜き、過剰な刺激を与えない設計。" data-text-zh="只选必要之物，避免过度刺激。" data-text-en="A design that handpicks only what is necessary, avoiding excessive irritation.">必要なものだけを選び抜き、過剰な刺激を与えない設計。</span></p></div><div><img src="images/Mask group.png" alt=""></div></div>
+    <div class="last-parent-second"><div class="last-parent-second-content"><h1 data-text-jp="安心のフリー設計" data-text-zh="安心的无添加配方" data-text-en="Safe Free-from Design">安心のフリー設計</h1><p data-text-jp="単なる無添加ではなく、<br> “肌への敬意”から生まれた処方思想です。" data-text-zh="不仅是简单的无添加，而是源于“对肌肤的敬意”而诞生的配方理念。" data-text-en="More than just additive-free, <br> it is a formulation philosophy born from respect for the skin.">単なる無添加ではなく、<br> “肌への敬意”から生まれた処方思想です。</p></div><div class="last-parent-circle"><div data-text-jp="パラベン" data-text-zh="对羟基苯甲酸酯" data-text-en="Parabens">パラベン</div><div data-text-jp="アルコール" data-text-zh="酒精" data-text-en="Alcohol">アルコール</div><div data-text-jp="鉱物油" data-text-zh="矿物油" data-text-en="Mineral oil">鉱物油</div><div data-text-jp="シリコン" data-text-zh="硅油" data-text-en="Silicone">シリコン</div></div></div>
+  </div>
+</section>
 
-    <div class="single-product-img">
-    <img src="picures/アートボード 2 3.png" alt="">
-    </div>
-
-    </div>
-    </section>
-
-    <!-- ================single product====================== -->
-
-    <!-- ================last img text====================== -->
-    <section class="last-img-text" data-aos="fade-down" data-aos-delay="250">
-    <div class="last-img-text-container">
-    <div class="last-parent-first">
-    <div class="last-parent-first-content">
-    <h1>品質への姿勢</h1>
-    <p>
-    <span>L’ejadeは、“肌への敬意”を込めて成分を選択しています。</span>
-    <span>必要なものだけを選び抜き、過剰な刺激を与えない設計。</span>
-    </p>
-    </div>
-    <div>
-    <img src="picures/Mask group.png" alt="">
-    </div>
-    </div>
-    <div class="last-parent-second" data-aos="fade-down" data-aos-delay="250">
-    <div class="last-parent-second-content">
-    <h1>安心のフリー設計</h1>
-    <p>単なる無添加ではなく、<br>
-    “肌への敬意”から生まれた処方思想です。
-    </p>
-    </div>
-    <div class="last-parent-circle">
-    <div>パラベン</div>
-    <div>アルコール</div>
-    <div>鉱物油</div>
-    <div>シリコン</div>
-    </div>
-    </div>
-
-    </div>
-    </section>
-
-    <!-- ================last img text====================== -->
-
-
-    <!-- ================faq section====================== -->
-    <section class="faq-section" data-aos="fade-down" data-aos-delay="250">
-    <h2 class="faq-title">FAQ</h2>
-    <p class="faq-subtitle">よくあるご質問</p>
-    <div class="faq-container">
+<!-- ================ FAQ ====================== -->
+<section class="faq-section" data-aos="fade-down">
+  <h2 class="faq-title" data-text-jp="FAQ" data-text-zh="常见问题">FAQ</h2>
+  <p class="faq-subtitle" data-text-jp="よくあるご質問" data-text-zh="常见问题" data-text-en="Frequently Asked Questions">よくあるご質問</p>
+  <div class="faq-container">
     <div class="faq-item">
-    <button class="faq-question">
-    Q1. 肌に刺激はありませんか？<span class="icon">+</span>
-    </button>
-    <div class="faq-answer">
-    <p>
-   <span> L'ejadeでは、肌への心地よさに配慮し、洗浄力・pHバランス・配合成分の設計を丁寧に行っています。</span>
- <span>シア脂やアルガンオイルなどの保湿成分を配合し、乾燥しがちな洗い上がりにも配慮しました。</span>
- <span>また、炭やクロロフィリン銅複合体などの清浄成分を取り入れることで、汚れや余分な皮脂をすっきりと洗い流し、清潔な肌環境へ導きます。</span>
- <span>防腐剤を含む添加成分についても、品質を保ちながら全体のバランスを大切に処方しています。</span>
-うるおいと清らかさのどちらも妥協せず、毎日心地よくお使いいただけるよう仕立てています。
-    </p>
+      <button class="faq-question"><span data-text-jp="Q1. 肌に刺激はありませんか？" data-text-zh="Q1. 会刺激皮肤吗？" data-text-en="Q1. Will it irritate my skin?">Q1. 肌に刺激はありませんか？</span><span class="icon">+</span></button>
+      <div class="faq-answer"><p><span data-text-jp="L'ejadeでは、肌への心地よさに配慮し、洗浄力・pHバランス・配合成分の設計を丁寧に行っています。" data-text-zh="L'ejade 注重肌肤的舒适感，在清洁力、pH平衡与配方设计上都经过细致考量。" data-text-en="At L'ejade, we prioritize skin comfort and carefully design the cleansing power, pH balance, and ingredients.">L'ejadeでは、肌への心地よさに配慮し、洗浄力・pHバランス・配合成分の設計を丁寧に行っています。</span><span data-text-jp="シア脂やアルガンオイルなどの保湿成分を配合し、乾燥しがちな洗い上がりにも配慮しました。" data-text-zh="添加了乳木果油和摩洛哥坚果油等保湿成分，特别关注洗后容易干燥的肌肤。" data-text-en="We have incorporated moisturizing ingredients like shea butter and argan oil to care for the skin's tendency to dry out after washing.">シア脂やアルガンオイルなどの保湿成分を配合し、乾燥しがちな洗い上がりにも配慮しました。</span><span data-text-jp="また、炭やクロロフィリン銅複合体などの清浄成分を取り入れることで、汚れや余分な皮脂をすっきりと洗い流し、清潔な肌環境へ導きます。" data-text-zh="此外，通过添加活性炭和铜叶绿素复合物等清洁成分，能彻底洗去污垢和多余皮脂，引导肌肤回归洁净状态。" data-text-en="Additionally, by including cleansing components such as charcoal and copper chlorophyllin complex, dirt and excess sebum are cleanly washed away, guiding the skin toward a pure environment.">また、炭やクロロフィリン銅複合体などの清浄成分を取り入れることで、汚れや余分な皮脂をすっきりと洗い流し、清潔な肌環境へ導きます。</span><span data-text-jp="防腐剤を含む添加成分についても、品質を保ちながら全体のバランスを大切に処方しています。" data-text-zh="对于含防腐剂的添加成分，在保持品质的同时，也注重整体配方的平衡。" data-text-en="Additives, including preservatives, are formulated with a strong emphasis on overall balance while maintaining quality.">防腐剤を含む添加成分についても、品質を保ちながら全体のバランスを大切に処方しています。</span><span data-text-jp="うるおいと清らかさのどちらも妥協せず、毎日心地よくお使いいただけるよう仕立てています。" data-text-zh="既不牺牲滋润感，也不妥协洁净度，精心打造出让您每天都能舒适使用的配方。" data-text-en="We have crafted this product so you can use it comfortably every day, without compromising on either moisture or purity.">うるおいと清らかさのどちらも妥協せず、毎日心地よくお使いいただけるよう仕立てています。</span></p></div>
     </div>
-    </div>
-
     <div class="faq-item">
-    <button class="faq-question">
-    Q2. 洗浄力が高いと、肌に負担がかかるのでは？<span class="icon">+</span>
-    </button>
-    <div class="faq-answer">
-    <p>
-    <span>L'ejadeは、“洗う”という時間を、ただ汚れを落とすためだけではなく、肌と心を静かに整えるひとときと考えています。</span>
-<span>そのため洗浄設計においては、石けん由来のすっきりとした洗浄力と、ベタイン系洗浄成分のまろやかな使用感をバランスよく組み合わせました。</span>
-<span>皮脂や汗などの汚れはきちんと洗い流しながらも、必要なうるおいまで奪いすぎないよう配慮し、なめらかで繊細な泡が肌をやさしく包み込みます。</span>
-<span>洗い上がりは、過度なつっぱり感を感じにくい、心地よい清潔感を目指しました。</span>
-<span>乾いた日々のすき間に、深く息をつくような余白を。</span>
-L'ejadeは、清らかさとやわらかさのどちらも大切にした、穏やかな洗い心地を追求しています。</p>
+      <button class="faq-question"><span data-text-jp="Q2. 洗浄力が高いと、肌に負担がかかるのでは？" data-text-zh="Q2. 清洁力强会不会给肌肤带来负担？" data-text-en="Q2. If the cleansing power is high, won't it burden the skin?">Q2. 洗浄力が高いと、肌に負担がかかるのでは？</span><span class="icon">+</span></button>
+      <div class="faq-answer"><p><span data-text-jp="L'ejadeは、“洗う”という時間を、ただ汚れを落とすためだけではなく、肌と心を静かに整えるひとときと考えています。" data-text-zh="L'ejade认为，“清洁”这一时刻，不仅是为了去除污垢，更是让肌肤与心灵静谧调和的时光。" data-text-en="L'ejade considers the time spent washing not just as a time to remove dirt, but as a moment to quietly rebalance the skin and mind.">L'ejadeは、“洗う”という時間を、ただ汚れを落とすためだけではなく、肌と心を静かに整えるひとときと考えています。</span><span data-text-jp="そのため洗浄設計においては、石けん由来のすっきりとした洗浄力と、ベタイン系洗浄成分のまろやかな使用感をバランスよく組み合わせました。" data-text-zh="因此，在清洁配方设计上，我们巧妙平衡了皂基带来的清爽洁净力与甜菜碱类清洁成分带来的柔和触感。" data-text-en="Therefore, in our cleansing design, we have well-balanced the refreshing cleansing power derived from soap with the mild feel of betaine-based cleansing ingredients.">そのため洗浄設計においては、石けん由来のすっきりとした洗浄力と、ベタイン系洗浄成分のまろやかな使用感をバランスよく組み合わせました。</span><span data-text-jp="皮脂や汗などの汚れはきちんと洗い流しながらも、必要なうるおいまで奪いすぎないよう配慮し、なめらかで繊細な泡が肌をやさしく包み込みます。" data-text-zh="在彻底洗净皮脂和汗水等污垢的同时，也特别注意避免过度带走肌肤所需的水分，细腻柔滑的泡沫温柔地包裹着肌肤。" data-text-en="While properly washing away impurities like sebum and sweat, we take care not to strip away essential moisture, allowing the smooth, delicate foam to gently envelop the skin.">皮脂や汗などの汚れはきちんと洗い流しながらも、必要なうるおいまで奪いすぎないよう配慮し、なめらかで繊細な泡が肌をやさしく包み込みます。</span><span data-text-jp="洗い上がりは、過度なつっぱり感を感じにくい、心地よい清潔感を目指しました。" data-text-zh="洗后不易产生过度紧绷感，旨在带来舒适的洁净感。" data-text-en="For the post-wash feel, we aimed for a comfortable sense of cleanliness that minimizes any feeling of excessive tightness.">洗い上がりは、過度なつっぱり感を感じにくい、心地よい清潔感を目指しました。</span><span data-text-jp="L'ejadeは、清らかさとやわらかさのどちらも大切にした、穏やかな洗い心地を追求しています。" data-text-zh="L'ejade追求一种既重视洁净又重视柔软的、温和的洗感。" data-text-en="L'ejade pursues a mild washing experience that values both purity and softness.">L'ejadeは、清らかさとやわらかさのどちらも大切にした、穏やかな洗い心地を追求しています。</span></p></div>
     </div>
-    </div>
-
     <div class="faq-item">
-    <button class="faq-question">
-    Q3. ニオイ対策としての効果は？ <span class="icon">+</span>
-    </button>
-    <div class="faq-answer">
-    <p>
-    <span>L'ejadeは、ただ香りで覆い隠すのではなく、洗浄そのものを通して肌を清らかに整えることを大切にしています。</span>
-<span>茶葉エキス、亜鉛、カキタンニン、炭を織り込んだ処方が、汗や皮脂などの汚れをすっきりと洗い流し、澄んだ印象の肌へと導きます。</span>
-<span>さらに香りは、過度に主張するのではなく、余韻のヴェールのように静かに寄り添う設計に。</span>
-<span>洗浄と香りが響き合い、気配までも端正に整うような、洗練された清潔感を目指しました。</span></p>
+      <button class="faq-question"><span data-text-jp="Q3. ニオイ対策としての効果は？" data-text-zh="Q3. 有除味效果吗？" data-text-en="Q3. How effective is it for odor control?">Q3. ニオイ対策としての効果は？</span><span class="icon">+</span></button>
+      <div class="faq-answer"><p><span data-text-jp="L'ejadeは、ただ香りで覆い隠すのではなく、洗浄そのものを通して肌を清らかに整えることを大切にしています。" data-text-zh="L'ejade并非仅仅用香气掩盖异味，而是重视通过清洁本身来净化肌肤。" data-text-en="Rather than simply masking odors with fragrance, L'ejade places importance on purifying the skin through the wash itself.">L'ejadeは、ただ香りで覆い隠すのではなく、洗浄そのものを通して肌を清らかに整えることを大切にしています。</span><span data-text-jp="茶葉エキス、亜鉛、カキタンニン、炭を織り込んだ処方が、汗や皮脂などの汚れをすっきりと洗い流し、澄んだ印象の肌へと導きます。" data-text-zh="配方中融入了茶叶提取物、锌、柿单宁和活性炭，能彻底洗去汗水和皮脂等污垢，令肌肤呈现清透感。" data-text-en="Our formula, interwoven with tea leaf extract, zinc, persimmon tannin, and charcoal, cleanly washes away sweat, sebum, and other impurities, guiding the skin to a clearer impression.">茶葉エキス、亜鉛、カキタンニン、炭を織り込んだ処方が、汗や皮脂などの汚れをすっきりと洗い流し、澄んだ印象の肌へと導きます。</span><span data-text-jp="さらに香りは、過度に主張するのではなく、余韻のヴェールのように静かに寄り添う設計に。" data-text-zh="同时香气设计并非过于张扬，而是如余韵薄纱般静静相伴。" data-text-en="Furthermore, the scent is designed not to be overly assertive, but to quietly accompany you like a veil of lingering notes.">さらに香りは、過度に主張するのではなく、余韻のヴェールのように静かに寄り添う設計に。</span><span data-text-jp="洗浄と香りが響き合い、気配までも端正に整うような、洗練された清潔感を目指しました。" data-text-zh="我们力求实现洗净与香气相互呼应，连气息都显得端庄得体，营造出精致的洁净感。" data-text-en="We aimed for a refined cleanliness where the cleansing action and fragrance resonate together, bringing even your aura into neat alignment.">洗浄と香りが響き合い、気配までも端正に整うような、洗練された清潔感を目指しました。</span></p></div>
     </div>
-    </div>
-
     <div class="faq-item">
-    <button class="faq-question">
-    Q4. 使用後の香りはどんな感じ？<span class="icon">+</span>
-    </button>
-    <div class="faq-answer">
-    <p>
-    <span>洗浄中は、上質なホテルのエントランスに足を踏み入れた瞬間のような、洗練と静けさを感じさせる香りがやさしく広がります。</span>
-<span>洗い流した後は、香りが過度に残るのではなく、清潔感を帯びた余韻として肌にそっと寄り添います。</span>
-<span>肌が呼吸するたび、ほのかな気配となって立ちのぼり、華やかに主張せずとも印象を残す。</span>
-<span>L'ejadeは、香りを纏うというより、品格ある空気を肌に宿すような仕上がりを目指しました。</span></p>
+      <button class="faq-question"><span data-text-jp="Q4. 使用後の香りはどんな感じ？" data-text-zh="Q4. 使用后的香味如何？" data-text-en="Q4. What does it smell like after use?">Q4. 使用後の香りはどんな感じ？</span><span class="icon">+</span></button>
+      <div class="faq-answer"><p><span data-text-jp="洗浄中は、上質なホテルのエントランスに足を踏み入れた瞬間のような、洗練と静けさを感じさせる香りがやさしく広がります。" data-text-zh="使用过程中，仿佛步入高端酒店大堂般的沉静与精致香气缓缓扩散。" data-text-en="During the wash, a fragrance evoking the refinement and tranquility of stepping into the entrance of a high-class hotel gently unfolds.">洗浄中は、上質なホテルのエントランスに足を踏み入れた瞬間のような、洗練と静けさを感じさせる香りがやさしく広がります。</span><span data-text-jp="洗い流した後は、香りが過度に残るのではなく、清潔感を帯びた余韻として肌にそっと寄り添います。" data-text-zh="冲洗后，香气不会过度残留，而是作为带有洁净感的余韵，轻柔地依偎在肌肤上。" data-text-en="After rinsing, the scent does not linger excessively, but rather softly stays with the skin as an afterglow tinged with cleanliness.">洗い流した後は、香りが過度に残るのではなく、清潔感を帯びた余韻として肌にそっと寄り添います。</span><span data-text-jp="肌が呼吸するたび、ほのかな気配となって立ちのぼり、華やかに主張せずとも印象を残す。" data-text-zh="随着肌肤的呼吸，香气会化作淡淡的气息升腾而起，虽不张扬却令人印象深刻。" data-text-en="With every breath your skin takes, it rises as a faint aura, leaving an impression without loudly asserting itself.">肌が呼吸するたび、ほのかな気配となって立ちのぼり、華やかに主張せずとも印象を残す。</span><span data-text-jp="L'ejadeは、香りを纏うというより、品格ある空気を肌に宿すような仕上がりを目指しました。" data-text-zh="L'ejade追求的并非仅仅是裹挟香气，而是让肌肤仿佛寄宿着优雅的气息。" data-text-en="Rather than merely wearing a scent, L'ejade aimed for a finish that instills an atmosphere of elegance into your skin.">L'ejadeは、香りを纏うというより、品格ある空気を肌に宿すような仕上がりを目指しました。</span></p></div>
     </div>
-    </div>
-    </div>
-    </section>
-    <!-- ================faq section====================== -->
+  </div>
+</section>
 
-
-    <!-- ================footer====================== -->
-    <footer>
-    <P>すべての肌に、静かな贅沢を</P>
-    </footer>
-    <!-- ================footer====================== -->
-
-    <script src="index.js"></script> 
-
-
+<footer><p data-text-jp="すべての肌に、静かな贅沢を" data-text-zh="为所有肌肤，静谧奢华" data-text-en="Quiet luxury for all skin">すべての肌に、静かな贅沢を</p></footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script src="js/index.js"></script>
 <script>
-  AOS.init();
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+
+  (function () {
+    const langSelect = document.getElementById("languageSelect");
+    const body = document.body;
+
+    let currentLang =
+      localStorage.getItem("selectedLanguage") || "jp";
+
+    function updateTexts(lang) {
+      document.querySelectorAll("[data-text-jp]").forEach((el) => {
+        const attr = `data-text-${lang}`;
+
+        if (el.hasAttribute(attr)) {
+          let newHtml = el.getAttribute(attr);
+
+          if (newHtml !== null) {
+            if (newHtml.includes("<br")) {
+              el.innerHTML = newHtml;
+            } else {
+              el.textContent = newHtml;
+            }
+          }
+        }
+      });
+
+      /* =========================
+         BODY LANGUAGE CLASS
+      ========================= */
+      body.classList.remove("lang-jp", "lang-zh", "lang-en");
+      body.classList.add(`lang-${lang}`);
+
+      /* update html lang */
+      document.documentElement.lang = lang;
+
+      localStorage.setItem("selectedLanguage", lang);
+
+      if (langSelect) {
+        langSelect.value = lang;
+      }
+    }
+
+    if (langSelect) {
+      langSelect.addEventListener("change", (e) => {
+        updateTexts(e.target.value);
+      });
+    }
+
+    updateTexts(currentLang);
+  })();
 </script>
-
-
-    </body>
-    </html>
+</body>
+</html>

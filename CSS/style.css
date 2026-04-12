@@ -70,7 +70,7 @@
 
     @media (min-width:990px) {
         .hero-section-main {
-        background-image: url(picures/FV背景.png);
+        background-image: url(../images/FV背景.png);
         background-repeat: no-repeat;
       
         }
@@ -79,7 +79,7 @@
 
 @media (max-width:990px) {
      .hero-section-main {
-    background-image: url(picures/newFrame\ 25\ \(3\).png) !important;
+    background-image: url(../images/newFrame\ 25\ \(3\).png) !important;
     background-repeat: no-repeat !important;
     background-size: 100% 100% !important;
     padding: 6rem 0;
@@ -115,7 +115,7 @@
 }
 }
  .hero-section-main {
-    background-image: url(picures/FV背景.png);
+    background-image: url(../images/FV背景.png);
     background-repeat: no-repeat;
     width: 100%;
     display: flex;
@@ -240,7 +240,7 @@ color: #C8A86B;
         top: 10%;
     }
     .second-main-section{
-        background-image: url(picures/Gemini_Generated_Image_ir1gyvir1gyvir1g.png);
+        background-image: url(../images/Gemini_Generated_Image_ir1gyvir1gyvir1g.png);
         background-repeat: no-repeat;
         background-size: cover;
         margin-top: -139px;
@@ -290,7 +290,7 @@ color: #C8A86B;
     margin: auto;
 }
 .second-single-card{
-    background-image: url(picures/box.png);
+    background-image: url(../images/box.png);
     background-size: cover;
     background-repeat: no-repeat;
     padding: 45px 10px 61px;
@@ -327,14 +327,14 @@ color: #C8A86B;
     /* =================text with backgroun section===================== */
     @media (min-width:767px) {
         .background-with-text-main-section{
-        background-image: url(picures/8d12abf29170797c9f00a408bd102473bb4f1298.png);
+        background-image: url(../images/8d12abf29170797c9f00a408bd102473bb4f1298.png);
         background-repeat: no-repeat;
         background-size: cover;
     }
     }
 @media (max-width:768px) {
     .background-with-text-main-section{
-        background-image: url(picures/third-section.png);
+        background-image: url(../images/third-section.png);
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -396,7 +396,7 @@ color: #C8A86B;
 
     /* =================Polygon circle section===================== */
     .gosai-container {
-    background-image: url(picures/gradient.png);
+    background-image: url(../images/gradient.png);
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 1150px;
@@ -656,7 +656,7 @@ color: #C8A86B;
     }
 
     .gosai-main-title {
-    font-size: 22px;
+    font-size: 22px !important;
     }
     }
 
@@ -666,7 +666,7 @@ color: #C8A86B;
     /* =================os new image text===================== */
 
     .bottom-image-text-main{
-    background-image: url(picures/３背景画像.png);
+    background-image: url(../images/３背景画像.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -689,6 +689,7 @@ color: #C8A86B;
     letter-spacing: 0%;
     color: #231815;
     margin: 0;
+    max-width: 600px;
     }
     .bottom-image-text-main .os-sub-heading{
     position: absolute;
@@ -792,12 +793,12 @@ color: #C8A86B;
     bottom: -36% !important;
 }
     .new-image-text{
-    background-image: url(picures/背景\ \(1\).png);
+    background-image: url(../images/背景\ \(1\).png);
     background-repeat: no-repeat;
     background-size: cover;
     }
     .img-text-img{
-    background-image: url(picures/01画像.png);
+    background-image: url(../images/01画像.png);
     background-size: cover;
     background-repeat: no-repeat;
     max-height: 278px;
@@ -864,6 +865,7 @@ color: #C8A86B;
     }
     .img-text-content{
     position: relative;
+    max-width: 560px;
     }
     .img-text-content img{
     position: absolute;
@@ -906,13 +908,13 @@ color: #C8A86B;
 
 @media (min-width:768px) {
         .main-os-sent-section {
-    background-image: url(picures/05背景画像\ \(1\).png);
+    background-image: url(../images/05背景画像\ \(1\).png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 }
    .main-os-calm-section{
-    background-image: url(picures/04背景画像\ \(1\).png) !important;
+    background-image: url(../images/04背景画像\ \(1\).png) !important;
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -1011,7 +1013,7 @@ color: #C8A86B;
 
     /* =================grid cards===================== */
     .main-grid-container{
-    background-image: url(picures/背景画像\ \(2\).png);
+    background-image: url(../images/背景画像\ \(2\).png);
     background-repeat: no-repeat;
     background-size: cover;
     }
@@ -1054,7 +1056,7 @@ color: #C8A86B;
     background: white;
     padding: 30px 35px;
     position: relative;
-    height: 240px;
+    height: auto;
     }
     .card-step{
     margin: 0;
@@ -1227,7 +1229,7 @@ color: #C8A86B;
     padding: 19px 0 0;
     }
     .single-product-img {
-    background-image: url(picures/商品背景画像.png);
+    background-image: url(../images/商品背景画像.png);
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -1298,7 +1300,7 @@ color: #C8A86B;
 
     /* =================last img text section===================== */
     .last-img-text{
-    background-image: url(picures/背景画像\ \(1\).png);
+    background-image: url(../images/背景画像\ \(1\).png);
     background-size: cover;
     background-repeat: no-repeat;
     }
@@ -1793,9 +1795,7 @@ color: #C8A86B;
         width: 179px ;
         height: 179px;
     }
-    .main-qty-box{
-    width: 50% !important;
-    }
+ 
 .last-background-text span{
     display: block;
 }
@@ -1889,9 +1889,7 @@ span.gosai-structure-text::before {
     width: 100%;
     justify-content: start;
 }
-.main-qty-box{
-    width: 40% !important;
-}
+
 .quantity-box{
     width: 100%;
     justify-content: space-between;
@@ -2013,14 +2011,14 @@ span.gosai-structure-text::before {
     opacity: 0.5;
 }
     .main-os-sent-section {
-    background-image: url(picures/Group\ 14.png);
+    background-image: url(../images/Group\ 14.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: auto;
     margin: -70px 0 0 !important;
     }
     .main-os-calm-section{
-        background-image: url(picures/mbl1.png) !important;
+        background-image: url(../images/mbl1.png) !important;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     }
@@ -2144,5 +2142,83 @@ span.gosai-structure-text::before {
 @media (max-width:990px) {
     .second-main-section {
     margin-top: -124px !important;
+}
+}
+
+
+
+.lang-en .gosai-center-text{
+    font-size: 28px;
+}
+.lang-en .first-new-imagetext-h1{
+    font-size: 40px;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.lang-en .hero-content h1 {
+    font-size: 40px;
+}
+.lang-en .img-text-content {
+    position: relative;
+    max-width: 500px;
+}
+.lang-zh .img-text-content {
+    max-width: 480px;
+}
+.lang-en .vertical-heading {
+    display: flex;
+    flex-direction: unset !important; 
+    gap: 5px;
+}
+.lang-en .vertical-headings {
+    display: flex;
+    gap: 0;
+}
+
+
+.lang-en .os-sub-heading span {
+    font-size: 25px;
+    letter-spacing: 0%;
+    text-align: center;
+    rotate: 90deg;
+    line-height: 27px;
+}
+
+.lang-en .main-os-sent-section .os-sub-heading span{
+    rotate: 0deg !important;
+
+}
+.lang-zh .hero-content h1 {
+    font-weight: 500;
+}
+.lang-zh .background-text-main-container h1 {
+    font-weight: 500;
+}
+
+.lang-zh .first-background-text {
+    font-weight: 500;
+}
+.lang-zh .last-background-text,.lang-zh .gosai-circle ,.lang-zh .gosai-center-text,.lang-zh .gosai-footer-text,.lang-zh .os-sub-heading span,.lang-zh .img-text-content h4,.lang-zh .img-text-content p,.lang-zh .bottom-image-text-content h1,.lang-zh .bottom-image-text-content p,.lang-zh .os-main-content h1,.lang-zh .os-main-content p {
+    font-weight: 500;
+}
+
+@media (max-width:768px) {
+.lang-en .vertical-headings {
+    display: flex;
+    gap: 0;
+    flex-direction: column;
+    width: 100%;
+    left: 0;
+    top: 17%;
+}
+.lang-en .gosai-center-text {
+    font-size: 16px !important;
+}
+.lang-en .first-new-imagetext-h1 {
+    font-size: 25px !important;
+}
+.lang-en .new-image-text .img-text-content h5{
+    padding-left: 3rem;
 }
 }
